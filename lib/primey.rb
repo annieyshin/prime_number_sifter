@@ -5,22 +5,9 @@ class Sieve
 
   def prime_finder()
     answer_array = *(2..@prime_number)
-    primes_array = []
-
-    o = (@prime_number/2)+1
-
-    (2..o).each do |steps|
-      answer_array.each do |remove|
-        puts "here's answer_array, #{answer_array}\n\n and here are steps #{steps} and remove #{remove}\n\n\n"
-        if answer_array.include?(steps)
-          if remove % steps == 0
-            answer_array.delete(remove)
-          end
-        end
-      end
+    answer_array.each do |number|
+      final_array = answer_array.reject{|glag| glag % number == 0}
     end
-
-    return answer_array
-
+    final_array
   end
 end
